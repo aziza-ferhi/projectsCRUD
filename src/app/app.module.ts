@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { NotFoundComponent } from './error-page/not-found/not-found.component';
+import { InternalServerComponent } from './error-page/internal-server/internal-server.component';
+
 
 
 
@@ -18,6 +20,7 @@ import { NotFoundComponent } from './error-page/not-found/not-found.component';
     HomeComponent,
     MenuComponent,
     NotFoundComponent,
+    InternalServerComponent
 
   ],
   imports: [
@@ -28,7 +31,8 @@ import { NotFoundComponent } from './error-page/not-found/not-found.component';
       {path: 'project', loadChildren: () => import('./project/project.module').then(p => p.ProjectModule)},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: '404', component: NotFoundComponent},
-      {path: '**', redirectTo: '/404', pathMatch: 'full'}
+      {path: '**', redirectTo: '/404', pathMatch: 'full'},
+      {path: '500', component: InternalServerComponent }
 
     ])
   ],

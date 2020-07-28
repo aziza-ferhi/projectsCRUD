@@ -1,1 +1,34 @@
-<p>this is project-list component page</p>
+<div class="row">
+    <div class="offset-10 col-md-2">
+        <a [routerLink]="[':project/create']">Create project</a>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name Of Project</th>
+                        <th>Type of Project</th>
+                        <th>Budget</th>
+                        <th>Details</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let project of projects">
+                        <td>{{project.nameOfProject}}</td>
+                        <td>{{project.typeOfProject}}</td>
+                        <td>{{project.budget}}</td>
+                        <td><button type="button" id="details" class="btn btn-light" (click)="getProjectDetails(project.id)">Details</button></td>
+                        <td><button type="button" id="update" class="btn btn-success" (click)="redirectToUpdatePage(project.id)">Update</button></td>
+                        <td><button type="button" id="delete" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
